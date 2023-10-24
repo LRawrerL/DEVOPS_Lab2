@@ -14,7 +14,7 @@ def display_main_menu(temperatures):
         print("Bye")
     elif len(temperatures) == 0 and selection != 0:
         print("Please input temperature first")
-        display_main_menu()
+        display_main_menu(temperatures)
     else:
         if selection == 0:
             temperatures = get_user_input()
@@ -36,12 +36,21 @@ def display_main_menu(temperatures):
 
 def get_user_input():
     print("get_user_input")
-    counter = 0
+    # counter = 0
+    # temperatures = []
+    # while counter < 5:
+    #     temperature = float(input("Please enter temperature: "))
+    #     temperatures.append(temperature)
+    #     counter += 1
+    # print(temperatures)
+    # return temperatures
     temperatures = []
-    while counter < 5:
-        temperature = float(input("Please enter temperature: "))
-        temperatures.append(temperature)
-        counter += 1
+    while True:
+        temperature_input = float(input("Please enter temperature (0 to exit):"))
+        if temperature_input == 0:
+            break
+        else:
+            temperatures.append(temperature_input)
     print(temperatures)
     return temperatures
 
@@ -85,6 +94,7 @@ def calc_median(temperatures):
         median = temperatures[n // 2]
     # Print the median of the list
     print("Median of list is : " + str(median))
+
 
 temperature = []
 display_main_menu(temperature)
