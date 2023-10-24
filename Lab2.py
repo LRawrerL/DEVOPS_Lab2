@@ -1,5 +1,3 @@
-print("ET0735 (Devops for AIoT) - Lab 2 - Introduction to Python")
-
 def display_main_menu(temperatures):
     print("display_main_menu")
     print("0. Input temperature")
@@ -36,6 +34,7 @@ def display_main_menu(temperatures):
 
 def get_user_input():
     print("get_user_input")
+    # This keeps the temperature list to a maximum of 5 values
     # counter = 0
     # temperatures = []
     # while counter < 5:
@@ -44,13 +43,24 @@ def get_user_input():
     #     counter += 1
     # print(temperatures)
     # return temperatures
+    # temperatures = []
+
+    # This allows the user to input as many temperatures as they want
+    # while True:
+    #     temperature_input = float(input("Please enter temperature (0 to exit):"))
+    #     if temperature_input == 0:
+    #         break
+    #     else:
+    #         temperatures.append(temperature_input)
+    # print(temperatures)
+    # return temperatures
+
+    # This allows the user to input as many temperatures as they want but converts list in string format to integer
     temperatures = []
-    while True:
-        temperature_input = float(input("Please enter temperature (0 to exit):"))
-        if temperature_input == 0:
-            break
-        else:
-            temperatures.append(temperature_input)
+    temperatures_input = input("Please enter temperature use (,) to separate them:")
+    temperatures_input = temperatures_input.split(",")
+    for temperature in temperatures_input:
+        temperatures.append(float(temperature))
     print(temperatures)
     return temperatures
 
@@ -96,5 +106,11 @@ def calc_median(temperatures):
     print("Median of list is : " + str(median))
 
 
-temperature = []
-display_main_menu(temperature)
+def main():
+    print("ET0735 (Devops for AIoT) - Lab 2 - Introduction to Python")
+    temperature = []
+    display_main_menu(temperature)
+
+
+if __name__ == "__main__":
+    main()
