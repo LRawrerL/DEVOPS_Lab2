@@ -9,7 +9,8 @@
 Create a simple BMI calculator function
 - Understand how to create simple functions
 - Operators
-- Conditionals 
+- Conditionals
+
 Create a statistics calculator for temperature
 - Mainly first task but with more functions
 - Finding a way to calculate median of a list
