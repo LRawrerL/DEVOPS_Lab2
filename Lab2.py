@@ -104,6 +104,7 @@ def calc_median(temperatures):
         median = temperatures[n // 2]
     # Print the median of the list
     print("Median of list is : " + str(median))
+    return median
 
 
 def main():
